@@ -24,7 +24,7 @@ $discord->on('ready', function (Discord $discord) {
         }
 
         // SE A MENSAGEM FOR DO BOT ARAYNA (MÚSICA) VAI REMOVER A MENSAGEM
-        if ($message->author->id === $_ENV['MOSCAO_BOT_ID']) {
+        if ($message->author->id === $_ENV['ARYANA_BOT_ID']) {
             $message->delete($message->content);
         }
 
@@ -33,7 +33,7 @@ $discord->on('ready', function (Discord $discord) {
 
         // SE NA MENSAGEM CONTER =M E FOR NO CANAL DO GERSON VAI ENVIAR UMA MENSAGEM E APAGAR A DO AUTHOR
         if (in_array("=m", $contentMusic) && $message->channel_id === $_ENV['GERSON_TEXT_CHANNEL']) {
-            $message->reply("O Corno do `{$message->author->username}` tá colocando música no lugar errado.");
+            $message->reply("O Corno do `{$message->author->username}` tá colocando música no lugar errado.", true);
             $message->delete($message->content);
         }
     });
